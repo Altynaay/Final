@@ -16,9 +16,15 @@ namespace first
             DirectoryInfo[] directories = directory.GetDirectories();
             foreach (FileInfo file in files)
             {
+                FileStream fs = new FileStream(file.FullName, FileMode.Open, FileAccess.Read);
+                
                 Console.WriteLine(file.Name + ":");
             }
-        } 
+           
+        }
+        static void isPower()
+        {
+        }
         static void Main(string[] args)
         {
             recursion();

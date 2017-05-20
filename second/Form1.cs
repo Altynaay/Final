@@ -32,7 +32,6 @@ namespace second
                     btn.TabIndex = tab;
                     tab++;
                     btn.Click += new EventHandler(number_click);
-                    
                     Controls.Add(btn);
                 }
 
@@ -40,7 +39,7 @@ namespace second
            
         }
 
-        static void number_click(object sender, EventArgs e)
+        private void number_click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             int c = int.Parse(btn.Text);
