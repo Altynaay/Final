@@ -36,11 +36,13 @@ namespace second
                 }
 
             }
-           
+
         }
+        
 
         private void number_click(object sender, EventArgs e)
         {
+            
             Button btn = sender as Button;
             int c = int.Parse(btn.Text);
             int b = int.Parse(textBox1.Text);
