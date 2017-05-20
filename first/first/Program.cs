@@ -9,7 +9,7 @@ namespace first
 {
     class Program
     {
-        static void recursion()
+        static void Show()
 
         {
             DirectoryInfo directory = new DirectoryInfo(@"C:\Users\Admin\Documents\Task1");
@@ -19,13 +19,18 @@ namespace first
             {
                 StreamReader sr = new StreamReader(@"C:\Users\Admin\Documents\Task1\file1.txt");
                 string[] s = sr.ReadLine().Split();
+
                 foreach (string ss in s)
                 {
                     int a = int.Parse(ss);
-                    if (a % 2 == 0)
+                    for (int i = 0; i < 10; i++)
                     {
-                        Console.WriteLine(file.Name + ":" + a.ToString());
+                        if (a == Math.Pow(2, i))
+                        {
+                            Console.WriteLine(file.Name + ":" + a.ToString()); //выводит имена файлов и числа только из первого файла
+                        }
                     }
+                  
                 }
                 sr.Close();
 
@@ -33,7 +38,7 @@ namespace first
         }
         static void Main(string[] args)
         {
-            recursion();
+            Show();
             Console.ReadKey();
         }
     }
