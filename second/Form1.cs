@@ -28,6 +28,11 @@ namespace second
                     btn.Text = ind.ToString();
                     btn.Location = new Point(j * 50, i * 50);
                     btn.Size = new Size(40, 40);
+                   for (ind = 0; ind < 9; ind++)
+                    {
+                        btn.TabIndex = ind;
+                        ind++;
+                    }
                     btn.Click += new EventHandler(number_click);
                     Controls.Add(btn);
                 }
@@ -35,14 +40,24 @@ namespace second
             }
            
         }
+        
         private void number_click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            if (btn.TabIndex + 1 % 2 == 0)
+            int c = int.Parse(btn.Text);
+            int b = int.Parse(textBox1.Text);
+            for (int i = 1; i < 9; i++)
             {
-                btn.Text += btn.Text;
-                textBox1.Text += textBox1.Text;
-            }
+                if (btn.TabIndex + 1 % i == 0)
+                {
+                    c++;
+                }
+                else
+                {
+                    c++;
+                    b++;
+                }
+            } 
         }
 
     
