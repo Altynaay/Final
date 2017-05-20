@@ -23,11 +23,20 @@ namespace third
         new Point(85,175), new Point(99,118), new Point(143,74)
         };
         static int i = 0;
-        Pen pen = new Pen(Color.Black);
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-            BackColor = Color.Black;
+           
         }
+        Pen pen = new Pen(Color.Cyan);
+        Point center = new Point(240, 90);
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Point second = points[i];
+            e.Graphics.DrawEllipse(pen, 80, 20, 320, 320);
+            e.Graphics.DrawLine(pen, second, center);
+        }
+
     }
 }
