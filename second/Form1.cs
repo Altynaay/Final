@@ -16,5 +16,25 @@ namespace second
         {
             InitializeComponent();
         }
-    }
-}
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            int ind = 0;
+            for (int i = 1; i <= 3; i++)
+            {
+                for (int j = 1; j <= 3; j++)
+                {
+                    Button btn = new Button();
+                    btn.Text = ind.ToString();
+                    btn.Location = new Point(j * 50, i * 50);
+                    btn.Size = new Size(40, 40);
+                    //btn.Click += new EventHandler(number_click);
+                    Controls.Add(btn);
+                }
+
+            }
+        }
+    
+     }
+ }
+
