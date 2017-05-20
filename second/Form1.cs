@@ -28,12 +28,23 @@ namespace second
                     btn.Text = ind.ToString();
                     btn.Location = new Point(j * 50, i * 50);
                     btn.Size = new Size(40, 40);
-                    //btn.Click += new EventHandler(number_click);
+                    btn.Click += new EventHandler(number_click);
                     Controls.Add(btn);
                 }
 
             }
+           
         }
+        private void number_click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn.TabIndex + 1 % 2 == 0)
+            {
+                btn.Text += btn.Text;
+                textBox1.Text += textBox1.Text;
+            }
+        }
+
     
      }
  }
