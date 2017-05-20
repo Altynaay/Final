@@ -20,7 +20,7 @@ namespace second
         private void Form1_Load(object sender, EventArgs e)
         {
             int ind = 0;
-            int tab = 0;
+            int tab = 1;
             for (int i = 1; i <= 3; i++)
             {
                 for (int j = 1; j <= 3; j++)
@@ -48,7 +48,7 @@ namespace second
             int b = int.Parse(textBox1.Text);
             for (int i = 1; i < 9; i++)
             {
-                if (btn.TabIndex + 1 % i == 0)
+                if (btn.TabIndex % i == 0)
                 {
                     c++;
                 }

@@ -14,16 +14,15 @@ namespace fourth
     {
         Graphics g;
         bool point = true;
-        public int dx, dy;
+        public int dy;
         public int x, y;
         public Form1()
         {
             InitializeComponent();
             g = pictureBox1.CreateGraphics();
-           /* Timer timer = new Timer();
+            Timer timer = new Timer();
             timer.Tick += timer1_Tick;
             timer.Start();
-            */
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -34,7 +33,7 @@ namespace fourth
                 y = e.Location.Y;
                 g.DrawEllipse(new Pen(Color.Blue), x - 15, y - 15, 30, 30);
                 point = false;
-                timer1.Start();
+                timer1.Enabled = true;
             }
             else
             {
@@ -42,7 +41,7 @@ namespace fourth
                 y = e.Location.Y;
                 g.DrawEllipse(new Pen(Color.Blue), x - 15, y - 15, 30, 30);
                 point = true;
-                timer1.Start();
+                timer1.Enabled = true;
             }
         }
     
@@ -58,7 +57,7 @@ namespace fourth
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            x -= dx;
+            x -= dy;
         }
     }
 }
