@@ -20,6 +20,7 @@ namespace second
         private void Form1_Load(object sender, EventArgs e)
         {
             int ind = 0;
+            int tab = 0;
             for (int i = 1; i <= 3; i++)
             {
                 for (int j = 1; j <= 3; j++)
@@ -28,20 +29,18 @@ namespace second
                     btn.Text = ind.ToString();
                     btn.Location = new Point(j * 50, i * 50);
                     btn.Size = new Size(40, 40);
-                   for (ind = 0; ind < 9; ind++)
-                    {
-                        btn.TabIndex = ind;
-                        ind++;
-                    }
+                    btn.TabIndex = tab;
+                    tab++;
                     btn.Click += new EventHandler(number_click);
+                    
                     Controls.Add(btn);
                 }
 
             }
            
         }
-        
-        private void number_click(object sender, EventArgs e)
+
+        static void number_click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             int c = int.Parse(btn.Text);
